@@ -3,7 +3,7 @@ package ua.epam.qa.entity;
 import java.io.Serializable;
 import java.util.Arrays;
 
-public class Student implements Serializable {
+public class Student implements Serializable, Comparable<Student> {
     protected static String faculty;
     private int id;
     private transient String password;
@@ -55,5 +55,10 @@ public class Student implements Serializable {
                 ", address=" + address +
                 ", marks=" + Arrays.toString(marks) +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return name.compareTo(o.getName());
     }
 }
