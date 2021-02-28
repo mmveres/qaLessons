@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.List;
 
-public class LinkedListNode<T> implements Iterable<T>, Comparable<LinkedListNode<T>> {
+public class LinkedListNode<T extends Comparable<T>> implements Iterable<T>, Comparable<LinkedListNode<T>> {
     ListNode<T> head;
 
     public LinkedListNode() {
@@ -45,14 +45,17 @@ public class LinkedListNode<T> implements Iterable<T>, Comparable<LinkedListNode
 
     @Override
     public int compareTo(LinkedListNode<T> other) {
+        if (other == null) return 1;
         ListNode iterThis = head;
         ListNode iterOther = other.head;
         while (iterThis != null && iterOther!=null){
-            if (((Auto)(iterThis.data)).compareTo(((Auto)(iterThis.data)))==0){
+            if (iterThis.data.compareTo(iterOther.data)==0){
             iterThis = iterThis.next;
             iterOther = iterOther.next;}
-            else return ((Auto)(iterThis.data)).compareTo(((Auto)(iterThis.data)));
+            else return (iterThis.data).compareTo(iterOther.data);
         }
+        if (iterThis != null) return 1;
+        if (iterOther!= null) return -1;
         return 0;
     }
 

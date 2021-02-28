@@ -2,12 +2,11 @@ package ua.epam.qa.lesson09.example;
 
 public class Bus extends Auto {
     private String name;
-    private int route;
+
 
     public Bus( String name, int route) {
-        super();
+        super(route);
         this.name = name;
-        this.route = route;
     }
 
     public String getName() {
@@ -18,25 +17,13 @@ public class Bus extends Auto {
         this.name = name;
     }
 
-    public int getRoute() {
-        return route;
-    }
-
-    public void setRoute(int route) {
-        this.route = route;
-    }
-
     @Override
     public String toString() {
         return "Bus{" +
                 "id=" + getId() +
                 ", name='" + name + '\'' +
-                ", route=" + route +
+                ", route=" + getRoute() +
                 '}';
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return route - ((Bus)o).getRoute();
-    }
 }

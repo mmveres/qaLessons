@@ -1,6 +1,6 @@
 package ua.epam.qa.lesson09.example;
 
-public class ListNode<T> {
+public class ListNode<T extends Comparable<T>> {
     T data;
     ListNode next;
 

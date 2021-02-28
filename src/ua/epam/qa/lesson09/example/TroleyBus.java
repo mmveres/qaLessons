@@ -4,17 +4,10 @@ public class TroleyBus extends Auto {
     private int route;
 
     public TroleyBus( int route) {
-        super();
-        this.route = route;
+        super(route);
+
     }
 
-    public int getRoute() {
-        return route;
-    }
-
-    public void setRoute(int route) {
-        this.route = route;
-    }
 
     @Override
     public String toString() {
@@ -23,4 +16,6 @@ public class TroleyBus extends Auto {
                 ", route=" + route +
                 '}';
     }
+
+
 }

@@ -6,7 +6,9 @@ public class ProgramAutoPark {
         LinkedListNode<Auto> park = new LinkedListNode<>();
         LinkedListNode<Auto> route = new LinkedListNode<>();
         generate3TroleyBus(park);
-        generate3TroleyBus(route);
+        //generate3TroleyBus(route);
+        //generate3TroleyBus2Bus(park);
+        generate3TroleyBus2Bus(route);
         System.out.println(park.compareTo(route));
         park.print();
         route.print();
@@ -39,11 +41,12 @@ public class ProgramAutoPark {
 
     }
     private static void generate3TroleyBus2Bus(LinkedListNode park) {
+        park.addFirst(new Bus("Tom3", 13));
+        park.addFirst(new Bus("Tom4", 14));
         park.addFirst(new TroleyBus( 111));
         park.addFirst(new TroleyBus( 112));
         park.addFirst(new TroleyBus( 113));
-        park.addFirst(new Bus("Tom3", 13));
-        park.addFirst(new Bus("Tom4", 14));
+
 
     }
     private static void generate4Bus(LinkedListNode park) {
